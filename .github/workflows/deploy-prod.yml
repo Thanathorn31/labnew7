@@ -1,6 +1,6 @@
-name: deploy on push
+name: deploy on push production branch
 on:
-  push :
+  push:
     branches:
       - prod
 jobs:
@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: check out the code to build server
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
       - name: copy file to server
         uses: appleboy/scp-action@master
         with:
@@ -19,3 +19,4 @@ jobs:
           source: "./html/*"
           target: "/var/www/html"
           strip_components: 1
+          debug: true
