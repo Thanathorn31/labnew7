@@ -1,7 +1,7 @@
 name: deploy on push
 on: 
   push:
-     - main
+    - main
 jobs:
   deploy-app:
     runs-on: ubuntu-latest
